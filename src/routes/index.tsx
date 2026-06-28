@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="text-center text-[11px] tracking-[0.25em] font-semibold text-[oklch(0.62_0.24_28)] mb-4">
+    <div data-reveal className="reveal text-center text-[11px] tracking-[0.25em] font-semibold text-[oklch(0.62_0.24_28)] mb-4">
       — {children} —
     </div>
   );
@@ -61,7 +61,7 @@ function useScrollReveal() {
           }
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" },
     );
     document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
     return () => io.disconnect();
