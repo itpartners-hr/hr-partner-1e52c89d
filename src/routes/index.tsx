@@ -31,7 +31,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={`rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-6 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
+    <div className={`rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-5 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
       {children}
     </div>
   );
