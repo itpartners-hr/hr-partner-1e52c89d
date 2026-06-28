@@ -105,7 +105,7 @@ function Index() {
         {/* О ПОЗИЦИИ */}
         <section>
           <SectionLabel>о позиции</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Обязанности специалиста и формат работы
           </h2>
           <div className="space-y-4">
@@ -162,7 +162,7 @@ function Index() {
         {/* ПРЕИМУЩЕСТВА */}
         <section>
           <SectionLabel>преимущества</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Преимущества работы с нами
           </h2>
           <div className="space-y-4">
@@ -182,7 +182,7 @@ function Index() {
 
         {/* КАК ВЫГЛЯДИТ РАБОЧИЙ КАБИНЕТ */}
         <section>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight">
             Как выглядит рабочий кабинет
           </h2>
           <p className="text-center text-muted-foreground mt-4 max-w-2xl mx-auto">
@@ -259,7 +259,7 @@ function Index() {
         {/* КАК НАЧИНАЕТЕ */}
         <section>
           <SectionLabel>простой процесс</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Как вы начинаете работать
           </h2>
           <div className="space-y-4">
@@ -288,7 +288,7 @@ function Index() {
         {/* ОТЗЫВЫ */}
         <section>
           <SectionLabel>отзывы команды</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Что говорят специалисты
           </h2>
           <div className="space-y-4">
@@ -320,7 +320,7 @@ function Index() {
         {/* FAQ */}
         <section>
           <SectionLabel>вопросы и ответы</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Ответы на главные вопросы
           </h2>
           <div className="space-y-4">
