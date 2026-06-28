@@ -291,8 +291,8 @@ function Index() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-3" />
-                <CarouselNext className="right-3" />
+                <CarouselPrevious className="left-2 h-7 w-7 sm:left-3 sm:h-8 sm:w-8" />
+                <CarouselNext className="right-2 h-7 w-7 sm:right-3 sm:h-8 sm:w-8" />
               </Carousel>
             </div>
             <div className="flex gap-3 mt-5 px-2 pb-2">
@@ -319,7 +319,7 @@ function Index() {
                 <div className="flex gap-5">
                   <div className="flex flex-col items-center">
                     <YellowIcon>{s.i}</YellowIcon>
-                    <div className="text-[10px] tracking-[0.2em] text-muted-foreground font-semibold mt-2">ШАГ {idx+1}</div>
+                    <div className="text-[11px] sm:text-xs tracking-[0.2em] text-muted-foreground font-semibold mt-2">ШАГ {idx+1}</div>
                   </div>
                   <div className="pt-1">
                     <h3 className="font-bold">{s.t}</h3>
@@ -344,15 +344,15 @@ function Index() {
               { n: "Денис", c: "г. Краснодар", t: "«Работаю здесь уже несколько месяцев. Главный плюс — понятные пошаговые алгоритмы и полная уверенность, что тебя не кинут, потому что договор официальный.»" },
             ].map((r) => (
               <Card key={r.n}>
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-full bg-yellow flex items-center justify-center font-bold text-[oklch(0.25_0.05_60)]">{r.n[0]}</div>
-                    <div>
-                      <div className="font-bold">{r.n}</div>
+                <div className="flex items-start justify-between gap-3 sm:gap-4">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-yellow flex items-center justify-center font-bold text-[oklch(0.25_0.05_60)] shrink-0 text-sm sm:text-base">{r.n[0]}</div>
+                    <div className="min-w-0">
+                      <div className="font-bold truncate">{r.n}</div>
                       <div className="text-xs text-muted-foreground">{r.c}</div>
                     </div>
                   </div>
-                  <ShieldCheck className="w-5 h-5 text-red" />
+                  <ShieldCheck className="w-5 h-5 text-red shrink-0 mt-1" />
                 </div>
                 <p className="text-muted-foreground mt-4 leading-relaxed">{r.t}</p>
                 <div className="flex gap-1 mt-4 text-red">
