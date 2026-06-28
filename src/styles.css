@@ -68,3 +68,9 @@
   transform: translateY(0);
 }
 
+@media (max-width: 640px) {
+  .reveal {
+    transform: translateY(16px);
+  }
+}
+
