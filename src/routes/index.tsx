@@ -48,34 +48,35 @@ function YellowIcon({ children }: { children: React.ReactNode }) {
 function Index() {
   return (
     <div className="min-h-screen">
-      <main className="max-w-5xl mx-auto px-5 md:px-8 py-16 md:py-24 space-y-24">
+      <main className="max-w-5xl mx-auto px-4 sm:px-5 md:px-8 py-10 md:py-24 space-y-14 md:space-y-24">
         {/* HERO */}
         <section className="text-center">
-          <div className="inline-flex items-center gap-2 border border-border rounded-full px-4 py-1.5 bg-card/70 text-sm mb-10">
+          <div className="inline-flex items-center gap-2 border border-border rounded-full px-3 py-1.5 bg-card/70 text-xs sm:text-sm mb-6 md:mb-10">
             <span className="w-5 h-5 rounded-full bg-red text-white flex items-center justify-center text-xs font-bold">Я</span>
             Официальный партнёр Яндекс Дистрибуции
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05]">
+          <h1 className="text-[2rem] leading-[1.08] sm:text-5xl md:text-7xl font-extrabold tracking-tight">
             Дистанционная работа
             <br />
             <span className="text-red">в проектах Яндекса</span>
           </h1>
-          <p className="max-w-2xl mx-auto mt-8 text-muted-foreground text-base md:text-lg leading-relaxed">
+          <p className="max-w-2xl mx-auto mt-5 md:mt-8 text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
             Информационная страница для аккредитованных специалистов. Ознакомьтесь с регламентом задач,
             чтобы изучить этапы работы и посмотреть реальные отчёты сотрудников нашей команды.
           </p>
-          <div className="flex flex-wrap justify-center gap-3 mt-8">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-6 md:mt-8">
             {[
               { icon: <FileEdit className="w-4 h-4 text-red" />, label: "Прямой договор с Яндексом" },
               { icon: <GraduationCap className="w-4 h-4 text-red" />, label: "Обучение с нуля" },
               { icon: <Send className="w-4 h-4 text-red" />, label: "Свободный график от 3 часов" },
             ].map((b) => (
-              <div key={b.label} className="inline-flex items-center gap-2 border border-border rounded-full px-4 py-2 bg-card/70 text-sm">
+              <div key={b.label} className="inline-flex items-center gap-2 border border-border rounded-full px-3 py-1.5 md:px-4 md:py-2 bg-card/70 text-xs sm:text-sm">
                 {b.icon}{b.label}
               </div>
             ))}
           </div>
         </section>
+
 
         {/* О ПОЗИЦИИ */}
         <section>
