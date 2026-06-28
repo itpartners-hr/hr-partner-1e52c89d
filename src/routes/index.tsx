@@ -31,7 +31,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={`rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-6 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
+    <div className={`rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-5 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
       {children}
     </div>
   );
@@ -48,39 +48,40 @@ function YellowIcon({ children }: { children: React.ReactNode }) {
 function Index() {
   return (
     <div className="min-h-screen">
-      <main className="max-w-5xl mx-auto px-5 md:px-8 py-16 md:py-24 space-y-24">
+      <main className="max-w-5xl mx-auto px-4 sm:px-5 md:px-8 py-10 md:py-24 space-y-14 md:space-y-24">
         {/* HERO */}
         <section className="text-center">
-          <div className="inline-flex items-center gap-2 border border-border rounded-full px-4 py-1.5 bg-card/70 text-sm mb-10">
+          <div className="inline-flex items-center gap-2 border border-border rounded-full px-3 py-1.5 bg-card/70 text-xs sm:text-sm mb-6 md:mb-10">
             <span className="w-5 h-5 rounded-full bg-red text-white flex items-center justify-center text-xs font-bold">Я</span>
             Официальный партнёр Яндекс Дистрибуции
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05]">
+          <h1 className="text-[2rem] leading-[1.08] sm:text-5xl md:text-7xl font-extrabold tracking-tight">
             Дистанционная работа
             <br />
             <span className="text-red">в проектах Яндекса</span>
           </h1>
-          <p className="max-w-2xl mx-auto mt-8 text-muted-foreground text-base md:text-lg leading-relaxed">
+          <p className="max-w-2xl mx-auto mt-5 md:mt-8 text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
             Информационная страница для аккредитованных специалистов. Ознакомьтесь с регламентом задач,
             чтобы изучить этапы работы и посмотреть реальные отчёты сотрудников нашей команды.
           </p>
-          <div className="flex flex-wrap justify-center gap-3 mt-8">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-6 md:mt-8">
             {[
               { icon: <FileEdit className="w-4 h-4 text-red" />, label: "Прямой договор с Яндексом" },
               { icon: <GraduationCap className="w-4 h-4 text-red" />, label: "Обучение с нуля" },
               { icon: <Send className="w-4 h-4 text-red" />, label: "Свободный график от 3 часов" },
             ].map((b) => (
-              <div key={b.label} className="inline-flex items-center gap-2 border border-border rounded-full px-4 py-2 bg-card/70 text-sm">
+              <div key={b.label} className="inline-flex items-center gap-2 border border-border rounded-full px-3 py-1.5 md:px-4 md:py-2 bg-card/70 text-xs sm:text-sm">
                 {b.icon}{b.label}
               </div>
             ))}
           </div>
         </section>
 
+
         {/* О ПОЗИЦИИ */}
         <section>
           <SectionLabel>о позиции</SectionLabel>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Обязанности специалиста и формат работы
           </h2>
           <div className="space-y-4">
@@ -137,7 +138,7 @@ function Index() {
         {/* ПРЕИМУЩЕСТВА */}
         <section>
           <SectionLabel>преимущества</SectionLabel>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Преимущества работы с нами
           </h2>
           <div className="space-y-4">
@@ -157,7 +158,7 @@ function Index() {
 
         {/* КАК ВЫГЛЯДИТ РАБОЧИЙ КАБИНЕТ */}
         <section>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight">
             Как выглядит рабочий кабинет
           </h2>
           <p className="text-center text-muted-foreground mt-4 max-w-2xl mx-auto">
@@ -234,7 +235,7 @@ function Index() {
         {/* КАК НАЧИНАЕТЕ */}
         <section>
           <SectionLabel>простой процесс</SectionLabel>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Как вы начинаете работать
           </h2>
           <div className="space-y-4">
@@ -263,7 +264,7 @@ function Index() {
         {/* ОТЗЫВЫ */}
         <section>
           <SectionLabel>отзывы команды</SectionLabel>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Что говорят специалисты
           </h2>
           <div className="space-y-4">
@@ -295,7 +296,7 @@ function Index() {
         {/* FAQ */}
         <section>
           <SectionLabel>вопросы и ответы</SectionLabel>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Ответы на главные вопросы
           </h2>
           <div className="space-y-4">
