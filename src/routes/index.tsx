@@ -204,31 +204,26 @@ function Index() {
 
           {/* Browser mock 2 — статистика */}
           <Card className="mt-6 p-3 md:p-4">
-            <div className="rounded-xl border border-border bg-card p-4 md:p-5">
-              <div className="flex flex-wrap gap-4 text-sm pb-3 mb-4 border-b border-border">
-                <span className="px-3 py-1.5 rounded-full bg-muted font-semibold">Базовая статистика</span>
-                <span className="text-muted-foreground py-1.5">Детализированная статистика</span>
-                <span className="text-muted-foreground py-1.5">Конструктор отчётов</span>
-                <span className="text-muted-foreground py-1.5">Выключить новый вид статистики</span>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <div className="border border-border rounded-xl p-4">
-                  <div className="text-xs text-muted-foreground">Визиты на Маркет</div>
-                  <div className="text-3xl font-extrabold mt-2">167</div>
-                </div>
-                <div className="border border-border rounded-xl p-4">
-                  <div className="text-xs text-muted-foreground">Созданные заказы</div>
-                  <div className="text-3xl font-extrabold mt-2">43</div>
-                </div>
-                <div className="rounded-xl p-4 bg-red text-white">
-                  <div className="text-xs opacity-90">Вознаграждение</div>
-                  <div className="text-3xl font-extrabold mt-2">167 890 ₽</div>
-                </div>
-                <div className="border border-border rounded-xl p-4 md:col-span-3">
-                  <div className="text-xs text-muted-foreground">Подтверждённые заказы</div>
-                  <div className="text-3xl font-extrabold mt-2">43</div>
-                </div>
-              </div>
+            <div className="rounded-xl overflow-hidden bg-card">
+              <Carousel opts={{ loop: true }} className="w-full">
+                <CarouselContent>
+                  {[
+                    { src: stat1.url, alt: "Статистика — общий вид" },
+                    { src: stat2.url, alt: "Статистика — пример 2" },
+                    { src: stat3.url, alt: "Статистика — пример 3" },
+                    { src: stat4.url, alt: "Статистика — пример 4" },
+                  ].map((img) => (
+                    <CarouselItem key={img.src}>
+                      <div className="w-full aspect-[16/12] bg-muted flex items-center justify-center">
+                        <img src={img.src} alt={img.alt} className="w-full h-full object-contain" />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-3" />
+                <CarouselNext className="right-3" />
+              </Carousel>
+            </div>
             </div>
             <div className="flex gap-3 mt-5 px-2 pb-2">
               <span className="w-6 h-6 rounded-full bg-yellow text-[oklch(0.25_0.05_60)] flex items-center justify-center text-xs font-bold shrink-0">2</span>
