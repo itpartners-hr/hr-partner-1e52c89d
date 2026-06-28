@@ -32,7 +32,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div data-reveal className={`reveal rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-5 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
+    <div data-reveal className={`reveal rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-4 sm:p-5 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
       {children}
     </div>
   );
@@ -119,14 +119,14 @@ function Index() {
   useScrollReveal();
   return (
     <div className="min-h-screen">
-      <main className="max-w-5xl mx-auto px-4 sm:px-5 md:px-8 py-10 md:py-24 space-y-14 md:space-y-24">
+      <main className="max-w-5xl mx-auto px-4 sm:px-5 md:px-8 py-8 sm:py-10 md:py-24 space-y-10 sm:space-y-14 md:space-y-24">
         {/* HERO */}
         <section className="text-center">
-          <div data-hero-reveal className="inline-flex items-center gap-2 border border-border rounded-full px-3 py-1.5 bg-card/70 text-xs sm:text-sm mb-6 md:mb-10">
-            <span className="w-5 h-5 rounded-full bg-red text-white flex items-center justify-center text-xs font-bold">Я</span>
-            Официальный партнёр Яндекс Дистрибуции
+          <div data-hero-reveal className="inline-flex flex-wrap justify-center items-center gap-2 border border-border rounded-full px-3 py-1.5 bg-card/70 text-xs sm:text-sm mb-6 md:mb-10">
+            <span className="w-5 h-5 rounded-full bg-red text-white flex items-center justify-center text-xs font-bold shrink-0">Я</span>
+            <span className="text-center">Официальный партнёр Яндекс Дистрибуции</span>
           </div>
-          <h1 data-hero-reveal className="text-[2rem] leading-[1.08] sm:text-5xl md:text-7xl font-extrabold tracking-tight">
+          <h1 data-hero-reveal className="text-[1.75rem] sm:text-[2rem] md:text-5xl lg:text-7xl leading-[1.1] sm:leading-[1.08] font-extrabold tracking-tight">
             Дистанционная работа<br />
             <span className="text-red">в проектах Яндекса</span>
           </h1>
