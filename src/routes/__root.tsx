@@ -87,8 +87,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "HR - партнерское агентство" },
       { name: "twitter:description", content: "Официальное партнёрское агентство. Дистанционная работа. Узнайте подробности и начните уже сегодня" },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/USll7fMR0TQkfoqBLuQdYrazR5S2/social-images/social-1782661101713-чяв.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/USll7fMR0TQkfoqBLuQdYrazR5S2/social-images/social-1782661101713-чяв.webp" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/486fa562-ded1-467d-91a2-5665c2c3f70a/id-preview-15af8251--7918716b-fa61-4bbd-834a-190000754a92.lovable.app-1782661244509.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/486fa562-ded1-467d-91a2-5665c2c3f70a/id-preview-15af8251--7918716b-fa61-4bbd-834a-190000754a92.lovable.app-1782661244509.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
