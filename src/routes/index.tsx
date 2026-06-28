@@ -239,11 +239,11 @@ function Index() {
           {/* Browser mock 1 */}
           <Card className="mt-8 p-3 md:p-4">
             <div className="rounded-xl border border-border bg-card overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
-                <span className="w-3 h-3 rounded-full bg-red"></span>
-                <span className="w-3 h-3 rounded-full bg-yellow"></span>
-                <span className="w-3 h-3 rounded-full bg-[oklch(0.7_0.15_145)]"></span>
-                <div className="ml-3 flex-1 bg-muted rounded-md px-3 py-1.5 text-xs text-muted-foreground">Личный кабинет / обучение</div>
+              <div className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-3 border-b border-border">
+                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red shrink-0"></span>
+                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow shrink-0"></span>
+                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[oklch(0.7_0.15_145)] shrink-0"></span>
+                <div className="ml-2 sm:ml-3 flex-1 bg-muted rounded-md px-2 sm:px-3 py-1 text-[10px] sm:text-xs text-muted-foreground truncate">Личный кабинет / обучение</div>
               </div>
               <div className="bg-card">
                 <Carousel opts={{ loop: true }} className="w-full">
@@ -259,11 +259,11 @@ function Index() {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious className="left-3" />
-                  <CarouselNext className="right-3" />
+                  <CarouselPrevious className="left-2 h-7 w-7 sm:left-3 sm:h-8 sm:w-8" />
+                  <CarouselNext className="right-2 h-7 w-7 sm:right-3 sm:h-8 sm:w-8" />
                 </Carousel>
               </div>
-              <div className="border-t border-border px-5 py-3 text-xs text-muted-foreground flex flex-wrap gap-4 justify-center">
+              <div className="border-t border-border px-3 sm:px-5 py-2 sm:py-3 text-[10px] sm:text-xs text-muted-foreground flex flex-wrap gap-x-3 gap-y-1 sm:gap-4 justify-center">
                 <span>Обратная связь</span><span>Справка</span><span>© 2006–2026 ООО «ЯНДЕКС»</span><span>Политика</span><span>Правила использования</span>
               </div>
             </div>
