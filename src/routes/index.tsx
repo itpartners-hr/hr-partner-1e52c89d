@@ -32,7 +32,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div data-reveal className={`reveal rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-5 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
+    <div data-reveal className={`reveal rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-4 sm:p-5 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
       {children}
     </div>
   );
@@ -58,7 +58,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
       >
         <YellowIcon><HelpCircle className="w-5 h-5" /></YellowIcon>
         <div className="pt-2 flex-1">
-          <h3 className="font-bold pr-8">{q}</h3>
+          <h3 className="font-bold pr-8 text-sm sm:text-base">{q}</h3>
         </div>
         <ChevronDown
           className={`w-5 h-5 mt-3 text-muted-foreground shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
@@ -119,14 +119,14 @@ function Index() {
   useScrollReveal();
   return (
     <div className="min-h-screen">
-      <main className="max-w-5xl mx-auto px-4 sm:px-5 md:px-8 py-10 md:py-24 space-y-14 md:space-y-24">
+      <main className="max-w-5xl mx-auto px-4 sm:px-5 md:px-8 py-8 sm:py-10 md:py-24 space-y-10 sm:space-y-14 md:space-y-24">
         {/* HERO */}
         <section className="text-center">
-          <div data-hero-reveal className="inline-flex items-center gap-2 border border-border rounded-full px-3 py-1.5 bg-card/70 text-xs sm:text-sm mb-6 md:mb-10">
-            <span className="w-5 h-5 rounded-full bg-red text-white flex items-center justify-center text-xs font-bold">Я</span>
-            Официальный партнёр Яндекс Дистрибуции
+          <div data-hero-reveal className="inline-flex flex-wrap justify-center items-center gap-2 border border-border rounded-full px-3 py-1.5 bg-card/70 text-xs sm:text-sm mb-6 md:mb-10">
+            <span className="w-5 h-5 rounded-full bg-red text-white flex items-center justify-center text-xs font-bold shrink-0">Я</span>
+            <span className="text-center">Официальный партнёр Яндекс Дистрибуции</span>
           </div>
-          <h1 data-hero-reveal className="text-[2rem] leading-[1.08] sm:text-5xl md:text-7xl font-extrabold tracking-tight">
+          <h1 data-hero-reveal className="text-[1.75rem] sm:text-[2rem] md:text-5xl lg:text-7xl leading-[1.1] sm:leading-[1.08] font-extrabold tracking-tight">
             Дистанционная работа<br />
             <span className="text-red">в проектах Яндекса</span>
           </h1>
@@ -239,11 +239,11 @@ function Index() {
           {/* Browser mock 1 */}
           <Card className="mt-8 p-3 md:p-4">
             <div className="rounded-xl border border-border bg-card overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
-                <span className="w-3 h-3 rounded-full bg-red"></span>
-                <span className="w-3 h-3 rounded-full bg-yellow"></span>
-                <span className="w-3 h-3 rounded-full bg-[oklch(0.7_0.15_145)]"></span>
-                <div className="ml-3 flex-1 bg-muted rounded-md px-3 py-1.5 text-xs text-muted-foreground">Личный кабинет / обучение</div>
+              <div className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-3 border-b border-border">
+                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red shrink-0"></span>
+                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow shrink-0"></span>
+                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[oklch(0.7_0.15_145)] shrink-0"></span>
+                <div className="ml-2 sm:ml-3 flex-1 bg-muted rounded-md px-2 sm:px-3 py-1 text-[10px] sm:text-xs text-muted-foreground truncate">Личный кабинет / обучение</div>
               </div>
               <div className="bg-card">
                 <Carousel opts={{ loop: true }} className="w-full">
@@ -259,11 +259,11 @@ function Index() {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious className="left-3" />
-                  <CarouselNext className="right-3" />
+                  <CarouselPrevious className="left-2 h-7 w-7 sm:left-3 sm:h-8 sm:w-8" />
+                  <CarouselNext className="right-2 h-7 w-7 sm:right-3 sm:h-8 sm:w-8" />
                 </Carousel>
               </div>
-              <div className="border-t border-border px-5 py-3 text-xs text-muted-foreground flex flex-wrap gap-4 justify-center">
+              <div className="border-t border-border px-3 sm:px-5 py-2 sm:py-3 text-[10px] sm:text-xs text-muted-foreground flex flex-wrap gap-x-3 gap-y-1 sm:gap-4 justify-center">
                 <span>Обратная связь</span><span>Справка</span><span>© 2006–2026 ООО «ЯНДЕКС»</span><span>Политика</span><span>Правила использования</span>
               </div>
             </div>
@@ -291,8 +291,8 @@ function Index() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-3" />
-                <CarouselNext className="right-3" />
+                <CarouselPrevious className="left-2 h-7 w-7 sm:left-3 sm:h-8 sm:w-8" />
+                <CarouselNext className="right-2 h-7 w-7 sm:right-3 sm:h-8 sm:w-8" />
               </Carousel>
             </div>
             <div className="flex gap-3 mt-5 px-2 pb-2">
@@ -319,7 +319,7 @@ function Index() {
                 <div className="flex gap-5">
                   <div className="flex flex-col items-center">
                     <YellowIcon>{s.i}</YellowIcon>
-                    <div className="text-[10px] tracking-[0.2em] text-muted-foreground font-semibold mt-2">ШАГ {idx+1}</div>
+                    <div className="text-[11px] sm:text-xs tracking-[0.2em] text-muted-foreground font-semibold mt-2">ШАГ {idx+1}</div>
                   </div>
                   <div className="pt-1">
                     <h3 className="font-bold">{s.t}</h3>
@@ -344,15 +344,15 @@ function Index() {
               { n: "Денис", c: "г. Краснодар", t: "«Работаю здесь уже несколько месяцев. Главный плюс — понятные пошаговые алгоритмы и полная уверенность, что тебя не кинут, потому что договор официальный.»" },
             ].map((r) => (
               <Card key={r.n}>
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-full bg-yellow flex items-center justify-center font-bold text-[oklch(0.25_0.05_60)]">{r.n[0]}</div>
-                    <div>
-                      <div className="font-bold">{r.n}</div>
+                <div className="flex items-start justify-between gap-3 sm:gap-4">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-yellow flex items-center justify-center font-bold text-[oklch(0.25_0.05_60)] shrink-0 text-sm sm:text-base">{r.n[0]}</div>
+                    <div className="min-w-0">
+                      <div className="font-bold truncate">{r.n}</div>
                       <div className="text-xs text-muted-foreground">{r.c}</div>
                     </div>
                   </div>
-                  <ShieldCheck className="w-5 h-5 text-red" />
+                  <ShieldCheck className="w-5 h-5 text-red shrink-0 mt-1" />
                 </div>
                 <p className="text-muted-foreground mt-4 leading-relaxed">{r.t}</p>
                 <div className="flex gap-1 mt-4 text-red">
@@ -387,7 +387,7 @@ function Index() {
             <div className="w-14 h-14 rounded-full bg-yellow flex items-center justify-center mx-auto">
               <Send className="w-6 h-6 text-[oklch(0.25_0.05_60)]" />
             </div>
-            <h3 className="text-2xl md:text-3xl font-extrabold mt-6 tracking-tight">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold mt-6 tracking-tight leading-tight">
               Ознакомились с информацией и готовы перейти к оформлению?
             </h3>
             <p className="text-muted-foreground mt-3">
