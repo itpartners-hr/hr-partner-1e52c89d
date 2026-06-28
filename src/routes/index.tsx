@@ -3,6 +3,9 @@ import {
   Send, FileEdit, GraduationCap, BarChart3, FileText, Wallet, Lock,
   ListChecks, SlidersHorizontal, CircleCheck, HelpCircle, ShieldCheck, Star,
 } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import kabinet1 from "@/assets/kabinet1.png.asset.json";
+import kabinet2 from "@/assets/kabinet2.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -167,25 +170,23 @@ function Index() {
                 <span className="w-3 h-3 rounded-full bg-[oklch(0.7_0.15_145)]"></span>
                 <div className="ml-3 flex-1 bg-muted rounded-md px-3 py-1.5 text-xs text-muted-foreground">Личный кабинет / обучение</div>
               </div>
-              <div className="px-5 py-4 border-b border-border flex items-center gap-2">
-                <span className="w-7 h-7 rounded-full bg-red text-white flex items-center justify-center font-bold">Я</span>
-                <span className="font-bold text-lg">Дистрибуция</span>
-              </div>
-              <div className="grid grid-cols-[180px_1fr] min-h-[260px]">
-                <aside className="border-r border-border p-3 space-y-1 text-sm">
-                  {["Дашборд","Статистика","Программы","Маркировка","Площадки","Финансы","Акты"].map((n,i) => (
-                    <div key={n} className={`px-3 py-2 rounded-lg ${i===0 ? "bg-muted font-semibold" : "text-muted-foreground"}`}>{n}</div>
-                  ))}
-                </aside>
-                <div className="p-4">
-                  <div className="border border-border rounded-xl p-4 grid grid-cols-2 md:grid-cols-5 gap-3">
-                    {["4.Объявления Авито","5.Масштабирование","6.Методы работы","7.Итоги","Полезные ссылки"].map((n) => (
-                      <div key={n} className="border border-border rounded-md p-2 text-center text-[11px]">
-                        <div className="aspect-video bg-muted rounded mb-1"></div>{n}
-                      </div>
+              <div className="bg-card">
+                <Carousel opts={{ loop: true }} className="w-full">
+                  <CarouselContent>
+                    {[
+                      { src: kabinet1.url, alt: "Личный кабинет — дашборд" },
+                      { src: kabinet2.url, alt: "Личный кабинет — обучение" },
+                    ].map((img) => (
+                      <CarouselItem key={img.src}>
+                        <div className="flex items-center justify-center p-3 md:p-5 bg-card">
+                          <img src={img.src} alt={img.alt} className="w-full h-auto rounded-lg" />
+                        </div>
+                      </CarouselItem>
                     ))}
-                  </div>
-                </div>
+                  </CarouselContent>
+                  <CarouselPrevious className="left-3" />
+                  <CarouselNext className="right-3" />
+                </Carousel>
               </div>
               <div className="border-t border-border px-5 py-3 text-xs text-muted-foreground flex flex-wrap gap-4 justify-center">
                 <span>Обратная связь</span><span>Справка</span><span>© 2006–2026 ООО «ЯНДЕКС»</span><span>Политика</span><span>Правила использования</span>
