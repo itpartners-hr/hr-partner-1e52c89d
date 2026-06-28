@@ -58,7 +58,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
       >
         <YellowIcon><HelpCircle className="w-5 h-5" /></YellowIcon>
         <div className="pt-2 flex-1">
-          <h3 className="font-bold pr-8">{q}</h3>
+          <h3 className="font-bold pr-8 text-sm sm:text-base">{q}</h3>
         </div>
         <ChevronDown
           className={`w-5 h-5 mt-3 text-muted-foreground shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
@@ -387,7 +387,7 @@ function Index() {
             <div className="w-14 h-14 rounded-full bg-yellow flex items-center justify-center mx-auto">
               <Send className="w-6 h-6 text-[oklch(0.25_0.05_60)]" />
             </div>
-            <h3 className="text-2xl md:text-3xl font-extrabold mt-6 tracking-tight">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold mt-6 tracking-tight leading-tight">
               Ознакомились с информацией и готовы перейти к оформлению?
             </h3>
             <p className="text-muted-foreground mt-3">
