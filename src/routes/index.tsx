@@ -170,10 +170,8 @@ function Index() {
             <span className="w-5 h-5 rounded-full bg-red text-white flex items-center justify-center text-xs font-bold">Я</span>
             Официальный партнёр Яндекс Дистрибуции
           </div>
-          <h1 data-hero-reveal className="text-[2rem] leading-[1.08] sm:text-5xl md:text-7xl font-extrabold tracking-tight">
-            Дистанционная работа
-            <br />
-            <span className="text-red">в проектах Яндекса</span>
+          <h1 className="text-[2rem] leading-[1.08] sm:text-5xl md:text-7xl font-extrabold tracking-tight">
+            <TypeWriter texts={["Дистанционная работа", "в проектах Яндекса"]} speed={60} />
           </h1>
           <p data-hero-reveal className="max-w-2xl mx-auto mt-5 md:mt-8 text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
             Информационная страница для аккредитованных специалистов. Ознакомьтесь с регламентом задач,
