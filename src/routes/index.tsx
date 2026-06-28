@@ -32,7 +32,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={`rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-5 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
+    <div data-reveal className={`reveal rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-5 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
       {children}
     </div>
   );
@@ -46,7 +46,30 @@ function YellowIcon({ children }: { children: React.ReactNode }) {
   );
 }
 
+function useScrollReveal() {
+  React.useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") {
+      document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => el.classList.add("reveal-in"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add("reveal-in");
+            io.unobserve(e.target);
+          }
+        }
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+}
+
 function Index() {
+  useScrollReveal();
   return (
     <div className="min-h-screen">
       <main className="max-w-5xl mx-auto px-4 sm:px-5 md:px-8 py-10 md:py-24 space-y-14 md:space-y-24">
