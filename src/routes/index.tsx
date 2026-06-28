@@ -1,8 +1,7 @@
 import * as React from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import {
   Send, FileEdit, GraduationCap, BarChart3, FileText, Wallet, Lock,
-  ListChecks, SlidersHorizontal, CircleCheck, HelpCircle, ShieldCheck, Star,
+  ListChecks, SlidersHorizontal, CircleCheck, HelpCircle, ShieldCheck, Star, ChevronDown,
 } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import kabinet1 from "@/assets/kabinet1.png.asset.json";
