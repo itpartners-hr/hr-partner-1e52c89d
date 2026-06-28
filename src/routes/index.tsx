@@ -224,7 +224,6 @@ function Index() {
                 <CarouselNext className="right-3" />
               </Carousel>
             </div>
-            </div>
             <div className="flex gap-3 mt-5 px-2 pb-2">
               <span className="w-6 h-6 rounded-full bg-yellow text-[oklch(0.25_0.05_60)] flex items-center justify-center text-xs font-bold shrink-0">2</span>
               <p className="text-sm text-muted-foreground"><span className="font-bold text-foreground">Рабочая панель статистики.</span> Прозрачный учёт выполненных вами задач и начисления официальных вознаграждений напрямую от Яндекса на основе выполненных KPI.</p>
