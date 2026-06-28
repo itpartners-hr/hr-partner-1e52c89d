@@ -46,6 +46,36 @@ function YellowIcon({ children }: { children: React.ReactNode }) {
   );
 }
 
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <Card>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="w-full flex gap-4 items-start text-left cursor-pointer"
+      >
+        <YellowIcon><HelpCircle className="w-5 h-5" /></YellowIcon>
+        <div className="pt-2 flex-1">
+          <h3 className="font-bold pr-8">{q}</h3>
+        </div>
+        <ChevronDown
+          className={`w-5 h-5 mt-3 text-muted-foreground shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+      <div
+        className={`grid transition-all duration-300 ease-out ${open ? "grid-rows-[1fr] opacity-100 mt-3" : "grid-rows-[0fr] opacity-0"}`}
+      >
+        <div className="overflow-hidden">
+          <p className="text-muted-foreground leading-relaxed pl-[3.25rem]">{a}</p>
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+
 function useScrollReveal() {
   React.useEffect(() => {
     if (typeof IntersectionObserver === "undefined") {
