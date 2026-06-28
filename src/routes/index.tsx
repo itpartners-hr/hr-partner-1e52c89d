@@ -6,6 +6,10 @@ import {
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import kabinet1 from "@/assets/kabinet1.png.asset.json";
 import kabinet2 from "@/assets/kabinet2.png.asset.json";
+import stat1 from "@/assets/stat1.jpg.asset.json";
+import stat2 from "@/assets/stat2.png.asset.json";
+import stat3 from "@/assets/stat3.png.asset.json";
+import stat4 from "@/assets/stat4.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
