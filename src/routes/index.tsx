@@ -96,6 +96,22 @@ function useScrollReveal() {
     document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
+
+  // Hero entrance animation on mount (mobile-friendly stagger)
+  React.useEffect(() => {
+    const heroEls = document.querySelectorAll<HTMLElement>("[data-hero-reveal]");
+    heroEls.forEach((el, i) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(16px)";
+      el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        }, 80 + i * 120);
+      });
+    });
+  }, []);
 }
 
 function Index() {
