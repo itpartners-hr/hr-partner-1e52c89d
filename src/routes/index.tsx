@@ -114,6 +114,51 @@ function useScrollReveal() {
   }, []);
 }
 
+function TypeWriter({ texts, speed = 60 }: { texts: string[]; speed?: number }) {
+  const [displayed, setDisplayed] = React.useState<string[]>([]);
+  const [lineIndex, setLineIndex] = React.useState(0);
+  const [charIndex, setCharIndex] = React.useState(0);
+  const [done, setDone] = React.useState(false);
+
+  React.useEffect(() => {
+    if (done) return;
+    const currentLine = texts[lineIndex];
+    if (charIndex < currentLine.length) {
+      const timer = setTimeout(() => {
+        setDisplayed((prev) => {
+          const next = [...prev];
+          next[lineIndex] = (next[lineIndex] || "") + currentLine[charIndex];
+          return next;
+        });
+        setCharIndex((i) => i + 1);
+      }, speed);
+      return () => clearTimeout(timer);
+    } else if (lineIndex < texts.length - 1) {
+      const timer = setTimeout(() => {
+        setLineIndex((i) => i + 1);
+        setCharIndex(0);
+      }, speed * 3);
+      return () => clearTimeout(timer);
+    } else {
+      setDone(true);
+    }
+  }, [texts, speed, lineIndex, charIndex, done]);
+
+  return (
+    <>
+      {texts.map((text, i) => (
+        <span key={i} className={i === 1 ? "text-red" : undefined}>
+          {displayed[i] || ""}
+          {i === lineIndex && !done && (
+            <span className="inline-block w-[0.05em] h-[1em] bg-current ml-[2px] animate-pulse align-middle" />
+          )}
+          {i < texts.length - 1 && <br />}
+        </span>
+      ))}
+    </>
+  );
+}
+
 function Index() {
   useScrollReveal();
   return (
@@ -125,10 +170,8 @@ function Index() {
             <span className="w-5 h-5 rounded-full bg-red text-white flex items-center justify-center text-xs font-bold">Я</span>
             Официальный партнёр Яндекс Дистрибуции
           </div>
-          <h1 data-hero-reveal className="text-[2rem] leading-[1.08] sm:text-5xl md:text-7xl font-extrabold tracking-tight">
-            Дистанционная работа
-            <br />
-            <span className="text-red">в проектах Яндекса</span>
+          <h1 className="text-[2rem] leading-[1.08] sm:text-5xl md:text-7xl font-extrabold tracking-tight">
+            <TypeWriter texts={["Дистанционная работа", "в проектах Яндекса"]} speed={60} />
           </h1>
           <p data-hero-reveal className="max-w-2xl mx-auto mt-5 md:mt-8 text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
             Информационная страница для аккредитованных специалистов. Ознакомьтесь с регламентом задач,
