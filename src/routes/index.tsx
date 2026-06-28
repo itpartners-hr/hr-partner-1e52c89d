@@ -1,3 +1,4 @@
+import * as React from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Send, FileEdit, GraduationCap, BarChart3, FileText, Wallet, Lock,
@@ -31,7 +32,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={`rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-5 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
+    <div data-reveal className={`reveal rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-5 md:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)] ${className}`}>
       {children}
     </div>
   );
@@ -45,7 +46,30 @@ function YellowIcon({ children }: { children: React.ReactNode }) {
   );
 }
 
+function useScrollReveal() {
+  React.useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") {
+      document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => el.classList.add("reveal-in"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add("reveal-in");
+            io.unobserve(e.target);
+          }
+        }
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+}
+
 function Index() {
+  useScrollReveal();
   return (
     <div className="min-h-screen">
       <main className="max-w-5xl mx-auto px-4 sm:px-5 md:px-8 py-10 md:py-24 space-y-14 md:space-y-24">
@@ -81,7 +105,7 @@ function Index() {
         {/* О ПОЗИЦИИ */}
         <section>
           <SectionLabel>о позиции</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Обязанности специалиста и формат работы
           </h2>
           <div className="space-y-4">
@@ -138,7 +162,7 @@ function Index() {
         {/* ПРЕИМУЩЕСТВА */}
         <section>
           <SectionLabel>преимущества</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Преимущества работы с нами
           </h2>
           <div className="space-y-4">
@@ -158,7 +182,7 @@ function Index() {
 
         {/* КАК ВЫГЛЯДИТ РАБОЧИЙ КАБИНЕТ */}
         <section>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight">
             Как выглядит рабочий кабинет
           </h2>
           <p className="text-center text-muted-foreground mt-4 max-w-2xl mx-auto">
@@ -235,7 +259,7 @@ function Index() {
         {/* КАК НАЧИНАЕТЕ */}
         <section>
           <SectionLabel>простой процесс</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Как вы начинаете работать
           </h2>
           <div className="space-y-4">
@@ -264,7 +288,7 @@ function Index() {
         {/* ОТЗЫВЫ */}
         <section>
           <SectionLabel>отзывы команды</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Что говорят специалисты
           </h2>
           <div className="space-y-4">
@@ -296,7 +320,7 @@ function Index() {
         {/* FAQ */}
         <section>
           <SectionLabel>вопросы и ответы</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
+          <h2 data-reveal className="reveal text-3xl sm:text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-6 md:mb-10">
             Ответы на главные вопросы
           </h2>
           <div className="space-y-4">
