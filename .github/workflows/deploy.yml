@@ -27,11 +27,19 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Build (static, prerendered)
+      - name: Build (SPA shell + prerender)
         env:
           DEPLOY_TARGET: github-pages
-          NITRO_PRESET: github_pages
         run: bun run build
+
+      - name: Prepare Pages output
+        run: |
+          cd dist/client
+          if [ -f _shell.html ] && [ ! -f index.html ]; then
+            mv _shell.html index.html
+          fi
+          cp index.html 404.html
+          touch .nojekyll
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -39,7 +47,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .output/public
+          path: dist/client
 
   deploy:
     needs: build
