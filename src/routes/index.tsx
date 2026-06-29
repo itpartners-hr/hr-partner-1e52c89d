@@ -399,6 +399,7 @@ function Index() {
             Отдел кадров / Программа продвижения ИТ-сервисов официального партнёра Яндекса.
             <br />Все права защищены.
           </p>
+          <p className="text-center text-muted-foreground mt-4">.</p>
         </section>
       </main>
     </div>
