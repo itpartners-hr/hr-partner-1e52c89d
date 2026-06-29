@@ -6,6 +6,12 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// When deploying to GitHub Pages set DEPLOY_TARGET=github-pages — switches
+// the Nitro preset to `github_pages` so the build emits prerendered static
+// HTML to .output/public/ (with 404.html + .nojekyll). Inside Lovable
+// sandbox builds this override is ignored (Lovable forces cloudflare).
+const isGithubPages = process.env.DEPLOY_TARGET === "github-pages";
+
 export default defineConfig({
   vite: {
     base: "/hr-partner/",
@@ -15,4 +21,11 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  ...(isGithubPages
+    ? {
+        nitro: {
+          preset: "github_pages",
+        },
+      }
+    : {}),
 });
